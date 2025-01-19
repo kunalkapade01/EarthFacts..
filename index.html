@@ -38,12 +38,29 @@
             background-color: #e9ecef;
             border-radius: 5px;
         }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <div id="app">
         <h1>Facts About Planet Earth</h1>
         <ul id="facts-list"></ul>
+        <button id="replace-facts">Replace Facts</button>
     </div>
     <script>
         const facts = [
@@ -89,12 +106,45 @@
             }
         ];
 
-        document.addEventListener('DOMContentLoaded', () => {
+        const newFacts = [
+            {
+                "fact": "Rotation",
+                "description": "Earth rotates on its axis once every 24 hours, which is why we experience day and night."
+            },
+            {
+                "fact": "Revolution",
+                "description": "Earth orbits the Sun once every 365.25 days, which is why we have a leap year every four years."
+            },
+            {
+                "fact": "Gravity",
+                "description": "Earth's gravity is what keeps us grounded and is responsible for the planet's ability to hold an atmosphere."
+            },
+            {
+                "fact": "Core",
+                "description": "Earth's core is composed of a solid inner core and a liquid outer core, primarily made of iron and nickel."
+            },
+            {
+                "fact": "Crust",
+                "description": "The Earth's crust is the outermost layer, varying in thickness from about 5 km (3 miles) under the oceans to about 70 km (43 miles) under the continents."
+            }
+        ];
+
+        function displayFacts(factsArray) {
             const factsList = document.getElementById('facts-list');
-            facts.forEach(fact => {
+            factsList.innerHTML = ''; // Clear existing facts
+            factsArray.forEach(fact => {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
                 factsList.appendChild(listItem);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            displayFacts(facts);
+
+            const replaceButton = document.getElementById('replace-facts');
+            replaceButton.addEventListener('click', () => {
+                displayFacts(newFacts);
             });
         });
     </script>
