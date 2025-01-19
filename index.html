@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Fun Fact</title>
+    <title>Data Professional Fun Facts</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,33 +52,64 @@
 </head>
 <body>
     <div id="app">
-        <h1>Random Fun Fact</h1>
-        <p id="fun-fact">Click the button to see a fun fact!</p>
-        <button id="random-fact-button">Show Random Fact</button>
+        <button id="generate-fact-button">Generate Random Fact</button>
+        <h1>Fun Facts About Data Professionals</h1>
+        <p id="fun-fact">Click the button to generate a random fact!</p>
     </div>
     <script>
-        const funFacts = [
-            "Bananas are berries, but strawberries aren't.",
-            "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible.",
-            "A day on Venus is longer than a year on Venus.",
-            "Octopuses have three hearts.",
-            "The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion.",
-            "There are more stars in the universe than grains of sand on all the Earth's beaches.",
-            "A group of flamingos is called a 'flamboyance'.",
-            "Wombat poop is cube-shaped.",
-            "Humans and giraffes have the same number of neck vertebrae.",
-            "The unicorn is the national animal of Scotland."
+        const facts = [
+            {
+                "fact": "Data Detective",
+                "description": "As a data analyst, you often play the role of a detective, uncovering hidden patterns and insights from vast amounts of data."
+            },
+            {
+                "fact": "Multilingual",
+                "description": "Data scientists are like polyglots, fluent in multiple programming languages such as Python, R, and SQL, which help them communicate with data."
+            },
+            {
+                "fact": "AI Apprentice",
+                "description": "As a fresher in AI/ML, you get to train models that mimic human intelligence, making you a modern-day apprentice to artificial intelligence."
+            },
+            {
+                "fact": "Visualization Artist",
+                "description": "Data analysts are artists in their own right, using tools like Tableau and Power BI to create visual masterpieces that tell compelling data stories."
+            },
+            {
+                "fact": "Algorithm Architect",
+                "description": "Data scientists design complex algorithms that can predict future trends, making them architects of the digital world."
+            },
+            {
+                "fact": "Endless Learner",
+                "description": "The field of AI/ML is ever-evolving, meaning you'll always be learning something new, from the latest algorithms to cutting-edge technologies."
+            },
+            {
+                "fact": "Data Doctor",
+                "description": "Just like doctors diagnose patients, data analysts diagnose data health, ensuring data quality and accuracy for reliable insights."
+            },
+            {
+                "fact": "Problem Solver",
+                "description": "AI/ML professionals are natural problem solvers, using machine learning models to tackle real-world challenges across various industries."
+            },
+            {
+                "fact": "Insight Generator",
+                "description": "As a data analyst, you transform raw data into actionable insights, helping businesses make informed decisions."
+            },
+            {
+                "fact": "Future Shaper",
+                "description": "Working in AI/ML means you're at the forefront of technology, shaping the future with innovations that can change how we live and work."
+            }
         ];
 
-        function displayRandomFact() {
-            const randomIndex = Math.floor(Math.random() * funFacts.length);
+        function generateRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
             const funFactElement = document.getElementById('fun-fact');
-            funFactElement.textContent = funFacts[randomIndex];
+            const randomFact = facts[randomIndex];
+            funFactElement.textContent = `${randomFact.fact}: ${randomFact.description}`;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const randomFactButton = document.getElementById('random-fact-button');
-            randomFactButton.addEventListener('click', displayRandomFact);
+            const generateFactButton = document.getElementById('generate-fact-button');
+            generateFactButton.addEventListener('click', generateRandomFact);
         });
     </script>
 </body>
