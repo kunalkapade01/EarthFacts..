@@ -51,13 +51,37 @@
         button:hover {
             background: linear-gradient(135deg, #0056b3, #007BFF);
         }
+
+        .fact-item {
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .fact-item:nth-child(1) { background-color: #FF6F61; }
+        .fact-item:nth-child(2) { background-color: #6B5B95; }
+        .fact-item:nth-child(3) { background-color: #88B04B; }
+        .fact-item:nth-child(4) { background-color: #F7CAC9; }
+        .fact-item:nth-child(5) { background-color: #92A8D1; }
+        .fact-item:nth-child(6) { background-color: #955251; }
+        .fact-item:nth-child(7) { background-color: #B565A7; }
+        .fact-item:nth-child(8) { background-color: #009B77; }
+        .fact-item:nth-child(9) { background-color: #DD4124; }
+        .fact-item:nth-child(10) { background-color: #D65076; }
+
+        .fact-item:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
     <div id="app">
         <button id="generate-fact-button">Generate Random Fact</button>
         <h1>Fun Facts About Data Professionals</h1>
-        <p id="fun-fact">Click the button to generate a random fact!</p>
+        <p id="fun-fact" class="fact-item">Click the button to generate a random fact!</p>
     </div>
     <script>
         const facts = [
@@ -108,6 +132,7 @@
             const funFactElement = document.getElementById('fun-fact');
             const randomFact = facts[randomIndex];
             funFactElement.textContent = `${randomFact.fact}: ${randomFact.description}`;
+            funFactElement.className = `fact-item fact-item-${randomIndex + 1}`;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
