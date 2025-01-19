@@ -9,7 +9,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
             color: #333;
             display: flex;
             justify-content: center;
@@ -20,60 +20,51 @@
         #app {
             max-width: 600px;
             padding: 30px;
-            background-color: #fff;
+            background-color: #ffffff;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
             text-align: center;
         }
 
         h1 {
-            color: #007BFF;
+            color: #2c3e50;
             margin-bottom: 20px;
         }
 
         p {
             font-size: 18px;
             margin: 20px 0;
-            color: #555;
+            color: #34495e;
         }
 
         button {
             padding: 12px 24px;
             font-size: 16px;
-            color: #fff;
-            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: #ffffff;
+            background-color: #2980b9;
             border: none;
             border-radius: 25px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background: linear-gradient(135deg, #0056b3, #007BFF);
+            background-color: #1f6391;
         }
 
         .fact-item {
             margin: 10px 0;
             padding: 15px;
             border-radius: 8px;
-            color: #fff;
+            background-color: #f7f9fc;
+            color: #2c3e50;
             font-weight: bold;
             transition: transform 0.3s ease;
         }
 
-        .fact-item:nth-child(1) { background-color: #FF6F61; }
-        .fact-item:nth-child(2) { background-color: #6B5B95; }
-        .fact-item:nth-child(3) { background-color: #88B04B; }
-        .fact-item:nth-child(4) { background-color: #F7CAC9; }
-        .fact-item:nth-child(5) { background-color: #92A8D1; }
-        .fact-item:nth-child(6) { background-color: #955251; }
-        .fact-item:nth-child(7) { background-color: #B565A7; }
-        .fact-item:nth-child(8) { background-color: #009B77; }
-        .fact-item:nth-child(9) { background-color: #DD4124; }
-        .fact-item:nth-child(10) { background-color: #D65076; }
-
         .fact-item:hover {
             transform: scale(1.05);
+            background-color: #e8f0fe;
         }
     </style>
 </head>
@@ -132,7 +123,6 @@
             const funFactElement = document.getElementById('fun-fact');
             const randomFact = facts[randomIndex];
             funFactElement.textContent = `${randomFact.fact}: ${randomFact.description}`;
-            funFactElement.className = `fact-item fact-item-${randomIndex + 1}`;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
